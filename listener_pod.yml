@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: listener
+  labels:
+    name: listener
+spec:
+  containers: 
+   -  name: listener
+      image: ros:indigo-ros-core
+      env:
+        - name: ROS_HOSTNAME
+          value: listener
+        - name: ROS_MASTER_URI
+          value: http://master:11311
+      args:
+        - rostopic 
+        - echo 
+        - my_topic
+

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: talker
+  labels:
+    name: talker
+spec:
+  containers: 
+   -  name: talker
+      image: ros:indigo-ros-core
+      env:
+        - name: ROS_HOSTNAME
+          value: talker
+        - name: ROS_MASTER_URI
+          value: http://master:11311
+#      ports:
+#        - containerPort: 11311
+#          name: master
+      args:
+          - rostopic 
+          - pub 
+          - "-r"
+          - "1" 
+          - my_topic
+          - std_msgs/String
+          - "ICClab"
