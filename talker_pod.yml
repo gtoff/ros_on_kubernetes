@@ -13,9 +13,6 @@ spec:
           value: talker
         - name: ROS_MASTER_URI
           value: http://master:11311
-#      ports:
-#        - containerPort: 11311
-#          name: master
       args:
           - rostopic 
           - pub 
