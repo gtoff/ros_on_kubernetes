@@ -23,4 +23,4 @@ spec:
           - "1" 
           - my_topic
           - std_msgs/String
-          - "ICClab"
+          - "SPLab+ICClab"
